@@ -357,11 +357,11 @@ $(document).ready(function(){
 
     $("#addlink-btn").click(function name(params) {
         // if (linkoptionindex==true){
-            // $(".link-option").slideToggle();
-       
-            if (linkoptionindex==true){
-                $(".link-option").slideToggle();
-            }
+            $(".link-option").slideDown();
+            
+            // if (linkoptionindex==true){
+            //     $(".link-option").slideToggle();
+            // }
             $(".link-option").focus();
         // }   
     })
@@ -372,7 +372,7 @@ $(document).ready(function(){
     $(".link-option, .link-option *").blur(function(e){
         // if(!$(e.relatedTarget).is(".link-option, .link-option *")){
             $(".link-option").slideUp();
-            linkoptionindex=false;
+            // linkoptionindex=false;
         // }
         // if($(e.relatedTarget).is("#addlink-btn")){
         //     console.log("sdfsdf")

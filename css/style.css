@@ -347,6 +347,9 @@ nav .right .nav-icon i {
   font-size: xx-large;
   font-weight: 500;
 }
+.content .limiter .container-login100 .wrap-login100 .login100-form .link-option:focus {
+  outline: none;
+}
 .content .show {
   opacity: 0;
   height: 0;
@@ -360,7 +363,7 @@ nav .right .nav-icon i {
 }
 .content .show .wrap {
   overflow-y: scroll;
-  min-width: 250px;
+  width: 250px;
   height: 500px;
   padding: 20px;
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
@@ -399,6 +402,7 @@ nav .right .nav-icon i {
   width: 100%;
   text-align: center;
   line-height: 45px;
+  height: 45px;
   position: relative;
   margin-top: 20px;
   display: flex;
@@ -406,6 +410,7 @@ nav .right .nav-icon i {
   align-items: center;
   text-decoration: none;
   transition: all 0.4s;
+  overflow: hidden;
 }
 .content .show .wrap #link-container .link:hover {
   cursor: pointer;
@@ -424,8 +429,11 @@ nav .right .nav-icon i {
   color: black;
   margin: 0;
   padding: 0;
-  margin-left: 20px;
   font-size: 14px;
+  height: 45px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @keyframes fadein {
@@ -685,9 +693,6 @@ nav .right .nav-icon i {
   .content .show {
     margin-left: 15px;
     margin-right: 15px;
-  }
-  .content .show .wrap {
-    min-width: 200px;
   }
   nav .right .nav-icon i {
     margin-top: 0;

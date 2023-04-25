@@ -391,6 +391,7 @@ nav .right .nav-icon i {
 .content .show .wrap .showname p {
   color: black;
   font-size: 20px;
+  overflow-x: hidden;
 }
 .content .show .wrap #link-container {
   position: relative;
@@ -601,6 +602,11 @@ nav .right .nav-icon i {
     margin: auto;
   }
 }
+@media (max-width: 580px) {
+  #container-showlink .link .linkinput i {
+    right: 20px;
+  }
+}
 @media (max-width: 700px) {
   .content .limiter {
     margin-bottom: 30px;
@@ -612,11 +618,8 @@ nav .right .nav-icon i {
     max-width: 100%;
     padding: 30px;
   }
-  #container-showlink .link .linkinput {
-    width: 100%;
-  }
-  #container-showlink .link .linkinput i {
-    right: 20px;
+  #container-showlink .link .yesno {
+    right: -47px;
   }
 }
 @media (max-width: 500px) {
@@ -644,22 +647,31 @@ nav .right .nav-icon i {
   #container-showlink .link .linkinput i {
     right: 10px;
   }
-  #container-showlink .link .linkinput h5 {
+  #container-showlink .link .linkinput .linknametitle-wrap #linknametitle {
     font-size: 18px;
   }
-  #container-showlink .link .linkinput input {
-    width: 90%;
-  }
-  #container-showlink .link .linkinput input:first-of-type {
+  #container-showlink .link .linkinput .linknametitle-wrap #title {
     font-size: 18px;
   }
-  #container-showlink .link .linkinput input:last-of-type {
-    font-size: 15px;
+  #container-showlink .link .linkinput #link {
+    font-size: 16px;
+  }
+  nav .right .nav-icon i {
+    margin-top: 0;
+    font-size: 27px;
+  }
+  .content .limiter .container-login100 .wrap-login100 .login100-form .name {
+    display: flex;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
   }
 }
 @media (max-width: 390px) {
   #container-showlink .link .linkinput {
     width: 100%;
+  }
+  #container-showlink .link .linkinput .linknametitle-wrap #linknametitle {
+    display: none;
   }
   #container-showlink .link .linkinput input {
     width: 85%;
@@ -694,9 +706,9 @@ nav .right .nav-icon i {
     margin-left: 15px;
     margin-right: 15px;
   }
-  nav .right .nav-icon i {
-    margin-top: 0;
-    font-size: 23px;
+  .content .show .wrap {
+    width: 200px;
+    margin: auto;
   }
   .logo {
     margin-top: 40px;

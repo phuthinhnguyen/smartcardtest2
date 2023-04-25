@@ -98,6 +98,17 @@ function addlinkfunction(a){
     var showFragment = create(`<a class="link" href='#' target="_blank"><img src="image/userinfo/${a.innerText.toLowerCase()}.png" alt=""><p>${name.value}</p></a>`);
     showLinkcontainer.insertBefore(showFragment, showLinkcontainer.childNodes[showLinkcontainer.childElementCount]);
     
+    // align tag p center depend on length of @yourtitle
+    let showlinkname = showLinkcontainer.childNodes[showLinkcontainer.childElementCount-1].childNodes[1];
+    if (name.value.length<10){
+        showlinkname.style.marginLeft="15px";
+    }
+    else if (name.value.length>=10 && name.value.length<18){
+        showlinkname.style.marginLeft="22px";
+    }
+    else showlinkname.style.marginLeft="45px";
+
+
     let title = document.querySelectorAll(".inputtitle");
     if (title[linkarea.childElementCount-1].value=="@yourtitle"){
         title[linkarea.childElementCount-1].style.color = "lightgray";
@@ -107,6 +118,7 @@ function addlinkfunction(a){
         title[linkarea.childElementCount-1].style.color = "black";
         title[linkarea.childElementCount-1].style.fontStyle = "normal";
     }
+    
     showanimation();
 }
 
@@ -276,6 +288,7 @@ function inputnamefocusout(a){
     }
     document.getElementById("name-show").innerText=a.value;
     z.style.display="inline";
+
     showanimation();
 }
 

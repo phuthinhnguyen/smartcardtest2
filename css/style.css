@@ -457,6 +457,27 @@ nav .right .nav-icon i {
   width: 80%;
   position: relative;
 }
+#container-showlink .link .linkinput .linknametitle-wrap {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+}
+#container-showlink .link .linkinput .linknametitle-wrap #linknametitle {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container-showlink .link .linkinput .linknametitle-wrap input {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  color: lightgray;
+  font-style: italic;
+}
 #container-showlink .link .linkinput i {
   cursor: pointer;
   position: absolute;
@@ -468,27 +489,12 @@ nav .right .nav-icon i {
 #container-showlink .link .linkinput i:last-of-type {
   bottom: 6px;
 }
-#container-showlink .link .linkinput input {
+#container-showlink .link .linkinput #link {
   margin-right: 10px;
-}
-#container-showlink .link .linkinput input:first-of-type {
-  width: 55%;
-  font-size: 20px;
-  font-weight: 500;
-  color: lightgray;
-  font-style: italic;
-}
-#container-showlink .link .linkinput input:last-of-type {
-  width: 84%;
+  width: 80%;
   margin-top: 10px;
   color: rgb(185, 185, 185);
   font-style: italic;
-}
-#container-showlink .link .linkinput h5 {
-  display: inline;
-}
-#container-showlink .link .linkinput p {
-  display: inline;
 }
 #container-showlink .link .linktrash i {
   cursor: pointer;

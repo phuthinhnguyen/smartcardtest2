@@ -427,9 +427,30 @@ nav{
       .linkinput{
         width: 80%;
         position: relative;
+        .linknametitle-wrap{
+          width: 80%;
+          display: flex;
+          justify-content: space-between;
+          justify-content: center;
+          #linknametitle{
+            display: inline;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          input
+          {
+            width: 100%;
+            font-size: 20px;
+            font-weight: 500;
+            color: lightgray;
+            font-style: italic;
+          }
+        }
         i{
             cursor: pointer;
-            // top: 70px;
             position: absolute;
             right: 40px;
             &:first-of-type{
@@ -439,27 +460,12 @@ nav{
               bottom: 6px;
             }
         }
-        input{
+        #link{
           margin-right: 10px;
-          &:first-of-type{
-            width: 55%;
-            font-size: 20px;
-            font-weight: 500;
-            color: lightgray;
-            font-style: italic;
-          }
-          &:last-of-type{
-            width: 84%;
-            margin-top: 10px;
-            color: rgb(185, 185, 185);
-            font-style: italic;
-          } 
-        }
-        h5{
-          display: inline;
-        }
-        p{
-          display: inline;
+          width: 80%;
+          margin-top: 10px;
+          color: rgb(185, 185, 185);
+          font-style: italic;
         }
       }
       .linktrash{

@@ -89,7 +89,7 @@ function addlinkfunction(a){
         }
         return frag;
     }
-    var fragment = create(`<div id="container-showlink"><div class="link"><div class="linklogo"><img src="image/userinfo/${a.innerText.toLowerCase()}.png"></div><div class="linkinput"><h5 id="linknametitle">${a.innerText} - </h5><input id="title" class="inputtitle" readonly="true" value="${(name.value=="@yourname") ? "@yourtitle" : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="edit(this)"></i><br><input id="link" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="edit(this)"></i></div><div class="linktrash"><i class="fas fa-trash" onclick="clicktrash(this)"></i></div><div class="yesno"><i class="fas fa-check" id="yes" onclick="removelink(this)"></i><i class="fas fa-times" id="no" onclick="clickno(this)"></i></div></div></div>`);
+    var fragment = create(`<div id="container-showlink"><div class="link"><div class="linklogo"><img src="image/userinfo/${a.innerText.toLowerCase()}.png"></div><div class="linkinput"><div class="linknametitle-wrap"><h5 id="linknametitle">${a.innerText}&nbsp;-&nbsp;</h5><input id="title" class="inputtitle" readonly="true" value="${(name.value=="@yourname") ? "@yourtitle" : name.value}" maxlength="40" size="18" onfocusout="inputtitlefocusout(this)" onkeyup="inputKeyUp(event,this)"></input></div><i class="fas fa-pencil" onclick="editinputtitle(this)"></i><input id="link" readonly="true" value="http://${a.innerText.toLowerCase()}.com/@yourlink" size="39" onfocusout="inputlinkfocusout(this)" onkeyup="inputKeyUp(event,this)"></input><i class="fas fa-pencil" onclick="editinputlink(this)"></i></div><div class="linktrash"><i class="fas fa-trash" onclick="clicktrash(this)"></i></div><div class="yesno"><i class="fas fa-check" id="yes" onclick="removelink(this)"></i><i class="fas fa-times" id="no" onclick="clickno(this)"></i></div></div></div>`);
     linkarea.insertBefore(fragment, linkarea.childNodes[linkarea.childElementCount]);
     $(".yesno").hide();
 
@@ -140,17 +140,31 @@ function clickno(a){
     z.style.display="none";
 }
 
-// click on edit icon for title and link
-function edit(a){
-    let z =a.previousElementSibling;
+// click on edit icon for title
+function editinputtitle(a){
+    let z =a.previousElementSibling.childNodes[1];
     z.readOnly="";
-    if ((z.value=="@yourtitle") || (z.value.indexOf("@yourlink")>0)){
+    if (z.value=="@yourtitle"){
         z.value="";
     }
     z.setSelectionRange(z.value.length, z.value.length);
     z.focus();
     a.style.display="none";
 }
+
+// click on edit icon for link
+function editinputlink(a){
+    let z =a.previousElementSibling;
+    z.readOnly="";
+    if (z.value.indexOf("@yourlink")>0){
+        z.value="";
+    }
+    z.setSelectionRange(z.value.length, z.value.length);
+    z.focus();
+    a.style.display="none";
+}
+
+
 // click on edit icon for name
 function editname(a){
     let z =a.previousElementSibling;
@@ -182,7 +196,7 @@ function inputKeyUp(e,a) {
 
 // when user focus out input for title
 function inputtitlefocusout(a){
-    let z =a.nextElementSibling;
+    let z =a.parentElement.nextElementSibling;
     a.readOnly="true";
     z.style.display="inline";
     // for title
@@ -199,23 +213,24 @@ function inputtitlefocusout(a){
     }
     let linkarea = document.getElementById("link-area");  
     let showLinkcontainer = document.getElementById("link-container");  
-    const index = Array.from(linkarea.children).indexOf(a.parentElement.parentElement.parentElement);
+    const index = Array.from(linkarea.children).indexOf(a.parentElement.parentElement.parentElement.parentElement);
     let showlinkname = showLinkcontainer.childNodes[index].childNodes[1];
     showlinkname.innerText =a.value;
-   
 }
 
 // when user focus out input for link
 function inputlinkfocusout(a){
     let z =a.nextElementSibling;
-    let linknametitle = a.parentNode.firstChild;
+    let linknametitle = a.previousElementSibling.previousElementSibling.childNodes[0];
+    console.log(linknametitle.innerText)
     a.readOnly="true";
     z.style.display="inline";
     // for link
     if (a.value==""){
-        a.value=`http://${linknametitle.innerText.replace(" - ","").toLowerCase()}.com/@yourlink`;
+        a.value=`http://${linknametitle.innerText.replace(/\s/g,"").replace("-","").toLowerCase()}.com/@yourlink`;
     }
-    if (a.value==`http://${linknametitle.innerText.replace(" - ","").toLowerCase()}.com/@yourlink`){
+    console.log(a.value)
+    if (a.value==`http://${linknametitle.innerText.replace(/\s/g,"").replace("-","").toLowerCase()}.com/@yourlink`){
         a.style.color = "rgb(185, 185, 185)";
         a.style.fontStyle = "italic";
     }

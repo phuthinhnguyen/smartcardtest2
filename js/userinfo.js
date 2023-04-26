@@ -370,12 +370,12 @@ $(document).ready(function(){
 
     $("#addlink-btn").click(function name(params) {
         // if (linkoptionindex==true){
-            $(".link-option").slideDown();
+            $(".link-option").slideToggle();
             
             // if (linkoptionindex==true){
             //     $(".link-option").slideToggle();
             // }
-            $(".link-option").focus();
+            // $(".link-option").focus();
         // }   
     })
     let linkoptionindex=true
@@ -384,12 +384,22 @@ $(document).ready(function(){
     })
     $(".link-option, .link-option *").blur(function(e){
         // if(!$(e.relatedTarget).is(".link-option, .link-option *")){
-            $(".link-option").slideUp();
-            // linkoptionindex=false;
+            // $(".link-option").slideUp();
+        //     // linkoptionindex=false;
         // }
         // if($(e.relatedTarget).is("#addlink-btn")){
         //     console.log("sdfsdf")
         // }
+        // if (!$(event.target).closest("#addlink-btn").length) {
+        //     $(".link-option").slideUp();
+        // }
+    });
+    $(document).click(function(event) {
+        if (!$(event.target).closest("#addlink-btn").length) {
+            $(".link-option").slideUp();
+            
+        }
+        console.log("fsf")
     });
 });
 

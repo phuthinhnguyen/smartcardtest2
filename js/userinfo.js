@@ -369,40 +369,155 @@ $(document).ready(function(){
     $(".link-option").hide();
 
     $("#addlink-btn").click(function name(params) {
-        // if (linkoptionindex==true){
-            $(".link-option").slideToggle();
-            
-            // if (linkoptionindex==true){
-            //     $(".link-option").slideToggle();
-            // }
-            // $(".link-option").focus();
-        // }   
+            $(".link-option").slideToggle();  
     })
-    let linkoptionindex=true
-    $(".link-option").children().click(function name(params) {
-       
-    })
-    $(".link-option, .link-option *").blur(function(e){
-        // if(!$(e.relatedTarget).is(".link-option, .link-option *")){
-            // $(".link-option").slideUp();
-        //     // linkoptionindex=false;
-        // }
-        // if($(e.relatedTarget).is("#addlink-btn")){
-        //     console.log("sdfsdf")
-        // }
-        // if (!$(event.target).closest("#addlink-btn").length) {
-        //     $(".link-option").slideUp();
-        // }
-    });
     $(document).click(function(event) {
         if (!$(event.target).closest("#addlink-btn").length) {
-            $(".link-option").slideUp();
-            
+            $(".link-option").slideUp(); 
         }
-        console.log("fsf")
     });
 });
 
+function guides(){
+    let body = document.getElementById("body");
+    let guides = document.getElementById("guides");
+    body.style.opacity="0";
+    guides.animate([
+        { top: "100%"},
+        { opacity: "0.1"},
+        { opacity: "0.7"},
+        { opacity: "1"},
+      ], {
+        duration: 1000,
+      });
+}
+setTimeout(guides,0.01)
+function skip(){
+    let body = document.getElementById("body");
+    body.style.opacity="1";
+    let guides = document.getElementById("guides");
+    guides.style.display="none";
+}
+function guidesgo(){
+    let guides = document.getElementById("guides");
+    let welcome = document.getElementById("welcome");
+    let body = document.getElementById("body");
+    let uploadavatar = document.getElementById("uploadavatar");
+    let changename = document.getElementById("changename");
+    let nexttoaddlink = document.getElementById("nexttoaddlink");
+    welcome.style.display="none";
+    welcome.animate([
+        { top: "50%"},
+        { top: "100%"},
+      ], {
+        duration: 500,
+      });
+    body.animate([
+        { opacity: "0.1"},
+        { opacity: "0.8"},
+      ], {
+        duration: 500,
+      });
+    body.style.opacity="1";
+    
+    uploadavatar.animate([
+        { top: "0"},
+        { top: "50%"},
+        ], {
+        duration: 500,
+        });
+    changename.animate([
+        { top: "0"},
+        { top: "60%"},
+        ], {
+        duration: 1000,
+        });
+    nexttoaddlink.animate([
+        { opacity: "0"},
+        { opacity: "0"},
+        { opacity: "0.9"},
+        ], {
+        duration: 1500,
+        });
+    uploadavatar.style.display="block";  
+    changename.style.display="block";  
+    nexttoaddlink.style.display="block";  
+}
+function nextoaddlink(){
+    let uploadavatar = document.getElementById("uploadavatar");
+    let changename = document.getElementById("changename");
+    let nexttoaddlink = document.getElementById("nexttoaddlink");
+    let addlink = document.getElementById("addlink");
+    let chooselink = document.getElementById("chooselink");
+    let nexttolinkcontainer = document.getElementById("nexttolinkcontainer");
+    uploadavatar.style.display="none";
+    changename.style.display="none";
+    nexttoaddlink.style.display="none";
+    addlink.animate([
+        { top: "0"},
+        { top: "60%"},
+        ], {
+        duration: 1000,
+        });
+    addlink.style.display="block";  
+    chooselink.animate([
+        { top: "0"},
+        { top: "70%"},
+        ], {
+        duration: 1400,
+        });
+    chooselink.style.display="block"; 
+    nexttolinkcontainer.animate([
+        { opacity: "0"},
+        { opacity: "0"},
+        { opacity: "0.9"},
+        ], {
+        duration: 1800,
+        }); 
+    nexttolinkcontainer.style.display="block";
+    $(".link-option").slideDown();
+}
+function nexttolinkcontainer(){
+    let linkoption = document.getElementsByClassName("link-option");
+    addlinkfunction(linkoption[0].children[0]); 
+    let addlink = document.getElementById("addlink");
+    let chooselink = document.getElementById("chooselink");
+    let nexttolinkcontainer = document.getElementById("nexttolinkcontainer");
+    let edittitle = document.getElementById("edittitle");
+    let editlink = document.getElementById("editlink");
+    let done = document.getElementById("done");
+    addlink.style.display="none";
+    chooselink.style.display="none";
+    nexttolinkcontainer.style.display="none";
+    edittitle.animate([
+        { top: "0"},
+        { top: "77%"},
+        ], {
+        duration: 1000,
+        });
+    edittitle.style.display="block";  
+    editlink.animate([
+        { top: "0"},
+        { top: "78%"},
+        ], {
+        duration: 1500,
+        });
+    editlink.style.display="block";  
+    done.animate([
+        { opacity: "0"},
+        { opacity: "0"},
+        { opacity: "0.9"},
+        ], {
+        duration: 1800,
+        }); 
+    done.style.display="block";
+}
+function done(){
+    skip();
+    let yes = document.getElementById("yes");
+    removelink(yes);
+}
 function submit_form(event,form){
     event.preventDefault();
 }
+

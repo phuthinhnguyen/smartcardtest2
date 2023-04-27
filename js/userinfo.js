@@ -379,19 +379,25 @@ $(document).ready(function(){
 });
 
 function guides(){
-    let body = document.getElementById("body");
-    let guides = document.getElementById("guides");
-    body.style.opacity="0";
-    guides.animate([
-        { top: "100%"},
-        { opacity: "0.1"},
-        { opacity: "0.7"},
-        { opacity: "1"},
-      ], {
-        duration: 1000,
-      });
+    if (window.innerWidth>991){
+        let body = document.getElementById("body");
+        let guides = document.getElementById("guides");
+        guides.animate([
+            { top: "100%"},
+            { opacity: "0.1"},
+            { opacity: "0.7"},
+            { opacity: "1"},
+          ], {
+            duration: 1000,
+          });
+    }
+    else skip();
 }
-setTimeout(guides,0.01)
+
+
+setTimeout(guides,1);
+
+
 function skip(){
     let body = document.getElementById("body");
     body.style.opacity="1";
@@ -419,7 +425,7 @@ function guidesgo(){
         duration: 500,
       });
     body.style.opacity="1";
-    
+    // guides.style.opacity="0.9";
     uploadavatar.animate([
         { top: "0"},
         { top: "50%"},

@@ -43,7 +43,9 @@ button {
     }
 }
 
-
+#body{
+  opacity: 0;
+}
 // CSS nav
 nav{
   width: 100%;
@@ -604,6 +606,8 @@ nav{
     top: 75%;
     left: 90%;
   }
+
+
 }
 
 

@@ -528,23 +528,11 @@ nav{
   top: 0;
   opacity: 0.8;
   z-index: 1000;
-  #welcome,#uploadavatar,#changename,#nexttoaddlink,#addlink,#chooselink,#nexttolinkcontainer,#edittitle,#editlink,#done{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 400px;
-    height: 200px;
-    background-color: black;
-    color: white;
-    border-radius: 40px;
-    padding: 40px 0;
-    border: 2px solid rgb(58, 57, 57);
-    text-align: center;
+  #welcome,#nexttoaddlink,#addlink,#chooselink,#nexttolinkcontainer,#edittitle,#editlink,#done{
+    @include welcome;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
     .item{
       width: 50%;
       height: 50px;
@@ -559,6 +547,23 @@ nav{
         }
       }
     }
+   
+  }
+  #uploadavatar,#changename{
+    @include welcome;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+    i{
+      margin-right: 20px;
+      font-size: 30px;
+
+    }
   }
   #uploadavatar,#changename,#nexttoaddlink,#addlink,#chooselink,#nexttolinkcontainer,#edittitle,#editlink,#done{
     display: none;
@@ -571,6 +576,7 @@ nav{
   #changename{
     top: 56%;
     left: 72%;
+    border-radius: 20px;
   }
   #nexttoaddlink,#nexttolinkcontainer,#done{
     cursor: pointer;

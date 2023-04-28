@@ -403,6 +403,19 @@ function skip(){
     body.style.opacity="1";
     let guides = document.getElementById("guides");
     guides.style.display="none";
+    let limiter = document.getElementById("limiter");
+    
+    limiter.animate([
+
+        { marginLeft: "20%"},
+        { marginLeft: "10%"},
+        { marginLeft: "2%"},
+        { marginLeft: "0%"},
+        { margin: "auto"}
+      ], {
+        duration: 2000,
+      });
+    limiter.style.margin="auto";
 }
 function guidesgo(){
     let guides = document.getElementById("guides");

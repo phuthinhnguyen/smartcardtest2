@@ -558,7 +558,7 @@ nav .right .nav-icon i {
   opacity: 0.8;
   z-index: 1000;
 }
-#guides #welcome, #guides #uploadavatar, #guides #changename, #guides #nexttoaddlink, #guides #addlink, #guides #chooselink, #guides #nexttolinkcontainer, #guides #edittitle, #guides #editlink, #guides #done {
+#guides #welcome, #guides #nexttoaddlink, #guides #addlink, #guides #chooselink, #guides #nexttolinkcontainer, #guides #edittitle, #guides #editlink, #guides #done {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -567,28 +567,59 @@ nav .right .nav-icon i {
   height: 200px;
   background-color: black;
   color: white;
-  border-radius: 40px;
+  border-radius: 20px;
   padding: 40px 0;
-  border: 2px solid rgb(58, 57, 57);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#guides #welcome .item, #guides #uploadavatar .item, #guides #changename .item, #guides #nexttoaddlink .item, #guides #addlink .item, #guides #chooselink .item, #guides #nexttolinkcontainer .item, #guides #edittitle .item, #guides #editlink .item, #guides #done .item {
+#guides #welcome .item, #guides #nexttoaddlink .item, #guides #addlink .item, #guides #chooselink .item, #guides #nexttolinkcontainer .item, #guides #edittitle .item, #guides #editlink .item, #guides #done .item {
   width: 50%;
   height: 50px;
   margin: auto;
   display: flex;
   justify-content: space-between;
 }
-#guides #welcome .item div, #guides #uploadavatar .item div, #guides #changename .item div, #guides #nexttoaddlink .item div, #guides #addlink .item div, #guides #chooselink .item div, #guides #nexttolinkcontainer .item div, #guides #edittitle .item div, #guides #editlink .item div, #guides #done .item div {
+#guides #welcome .item div, #guides #nexttoaddlink .item div, #guides #addlink .item div, #guides #chooselink .item div, #guides #nexttolinkcontainer .item div, #guides #edittitle .item div, #guides #editlink .item div, #guides #done .item div {
   cursor: pointer;
   padding: 10px;
 }
-#guides #welcome .item div:hover, #guides #uploadavatar .item div:hover, #guides #changename .item div:hover, #guides #nexttoaddlink .item div:hover, #guides #addlink .item div:hover, #guides #chooselink .item div:hover, #guides #nexttolinkcontainer .item div:hover, #guides #edittitle .item div:hover, #guides #editlink .item div:hover, #guides #done .item div:hover {
+#guides #welcome .item div:hover, #guides #nexttoaddlink .item div:hover, #guides #addlink .item div:hover, #guides #chooselink .item div:hover, #guides #nexttolinkcontainer .item div:hover, #guides #edittitle .item div:hover, #guides #editlink .item div:hover, #guides #done .item div:hover {
   color: gray;
+}
+#guides #uploadavatar, #guides #changename {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 40px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#guides #uploadavatar p, #guides #changename p {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+#guides #uploadavatar i, #guides #changename i {
+  margin-right: 20px;
+  font-size: 30px;
 }
 #guides #uploadavatar, #guides #changename, #guides #nexttoaddlink, #guides #addlink, #guides #chooselink, #guides #nexttolinkcontainer, #guides #edittitle, #guides #editlink, #guides #done {
   display: none;
@@ -601,6 +632,7 @@ nav .right .nav-icon i {
 #guides #changename {
   top: 56%;
   left: 72%;
+  border-radius: 20px;
 }
 #guides #nexttoaddlink, #guides #nexttolinkcontainer, #guides #done {
   cursor: pointer;

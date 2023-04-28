@@ -558,7 +558,7 @@ nav .right .nav-icon i {
   opacity: 0.8;
   z-index: 1000;
 }
-#guides #welcome, #guides #nexttoaddlink, #guides #addlink, #guides #chooselink, #guides #nexttolinkcontainer, #guides #edittitle, #guides #editlink, #guides #done {
+#guides #welcome {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -578,21 +578,25 @@ nav .right .nav-icon i {
   align-items: center;
   justify-content: center;
 }
-#guides #welcome .item, #guides #nexttoaddlink .item, #guides #addlink .item, #guides #chooselink .item, #guides #nexttolinkcontainer .item, #guides #edittitle .item, #guides #editlink .item, #guides #done .item {
+#guides #welcome p:first-of-type {
+  font-size: 27px;
+}
+#guides #welcome .item {
   width: 50%;
   height: 50px;
   margin: auto;
   display: flex;
   justify-content: space-between;
 }
-#guides #welcome .item div, #guides #nexttoaddlink .item div, #guides #addlink .item div, #guides #chooselink .item div, #guides #nexttolinkcontainer .item div, #guides #edittitle .item div, #guides #editlink .item div, #guides #done .item div {
+#guides #welcome .item div {
   cursor: pointer;
   padding: 10px;
 }
-#guides #welcome .item div:hover, #guides #nexttoaddlink .item div:hover, #guides #addlink .item div:hover, #guides #chooselink .item div:hover, #guides #nexttolinkcontainer .item div:hover, #guides #edittitle .item div:hover, #guides #editlink .item div:hover, #guides #done .item div:hover {
+#guides #welcome .item div:hover {
   color: gray;
 }
-#guides #uploadavatar, #guides #changename {
+#guides #uploadavatar, #guides #changename, #guides #addlink, #guides #edittitle, #guides #editlink {
+  font-size: 18px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -611,62 +615,89 @@ nav .right .nav-icon i {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  height: 60px;
+  width: 300px;
+  padding: 15px 0;
+  display: none;
 }
-#guides #uploadavatar p, #guides #changename p {
-  display: inline-block;
+#guides #uploadavatar p, #guides #changename p, #guides #addlink p, #guides #edittitle p, #guides #editlink p {
   margin: 0;
   padding: 0;
 }
-#guides #uploadavatar i, #guides #changename i {
+@keyframes handanimation {
+  0% {
+    margin-left: 20px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+#guides #uploadavatar i, #guides #changename i, #guides #addlink i, #guides #edittitle i, #guides #editlink i {
   margin-right: 20px;
   font-size: 30px;
+  animation: handanimation 1s infinite;
 }
-#guides #uploadavatar, #guides #changename, #guides #nexttoaddlink, #guides #addlink, #guides #chooselink, #guides #nexttolinkcontainer, #guides #edittitle, #guides #editlink, #guides #done {
-  display: none;
-  left: 65%;
-  top: 45%;
-  width: 300px;
-  height: 60px;
-  padding: 15px 0;
+#guides #uploadavatar {
+  top: 40%;
+  left: 62%;
+  border-radius: 20px;
 }
 #guides #changename {
-  top: 56%;
+  top: 54%;
   left: 72%;
   border-radius: 20px;
 }
 #guides #nexttoaddlink, #guides #nexttolinkcontainer, #guides #done {
-  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 40px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
   left: 80%;
+  top: 42%;
   width: 150px;
+  height: 60px;
+  padding: 15px 0;
+  cursor: pointer;
   transition: 0.6s;
+  font-size: 20px;
 }
 #guides #nexttoaddlink:hover, #guides #nexttolinkcontainer:hover, #guides #done:hover {
   background-color: white;
   color: black;
 }
 #guides #addlink {
-  top: 62%;
-  left: 73%;
-}
-#guides #chooselink {
-  top: 70%;
-  left: 75%;
+  top: 60%;
+  left: 74%;
+  width: 400px;
 }
 #guides #nexttolinkcontainer {
-  top: 65%;
-  left: 88%;
+  top: 60%;
+  left: 90%;
 }
 #guides #edittitle {
-  top: 70%;
+  top: 68%;
   left: 77%;
 }
 #guides #editlink {
-  top: 78%;
+  top: 74%;
   left: 77%;
 }
 #guides #done {
-  top: 75%;
-  left: 90%;
+  top: 71%;
+  left: 92%;
 }
 
 @media (max-width: 1500px) {

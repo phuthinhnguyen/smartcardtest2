@@ -458,8 +458,8 @@ function guidesgo(){
         ], {
         duration: 1500,
         });
-    uploadavatar.style.display="block";  
-    changename.style.display="block";  
+    uploadavatar.style.display="flex";  
+    changename.style.display="flex";  
     nexttoaddlink.style.display="block";  
 }
 function nextoaddlink(){
@@ -467,7 +467,6 @@ function nextoaddlink(){
     let changename = document.getElementById("changename");
     let nexttoaddlink = document.getElementById("nexttoaddlink");
     let addlink = document.getElementById("addlink");
-    let chooselink = document.getElementById("chooselink");
     let nexttolinkcontainer = document.getElementById("nexttolinkcontainer");
     uploadavatar.style.display="none";
     changename.style.display="none";
@@ -478,14 +477,7 @@ function nextoaddlink(){
         ], {
         duration: 1000,
         });
-    addlink.style.display="block";  
-    chooselink.animate([
-        { top: "0"},
-        { top: "70%"},
-        ], {
-        duration: 1400,
-        });
-    chooselink.style.display="block"; 
+    addlink.style.display="flex";  
     nexttolinkcontainer.animate([
         { opacity: "0"},
         { opacity: "0"},
@@ -500,13 +492,11 @@ function nexttolinkcontainer(){
     let linkoption = document.getElementsByClassName("link-option");
     addlinkfunction(linkoption[0].children[0]); 
     let addlink = document.getElementById("addlink");
-    let chooselink = document.getElementById("chooselink");
     let nexttolinkcontainer = document.getElementById("nexttolinkcontainer");
     let edittitle = document.getElementById("edittitle");
     let editlink = document.getElementById("editlink");
     let done = document.getElementById("done");
     addlink.style.display="none";
-    chooselink.style.display="none";
     nexttolinkcontainer.style.display="none";
     edittitle.animate([
         { top: "0"},
@@ -514,14 +504,14 @@ function nexttolinkcontainer(){
         ], {
         duration: 1000,
         });
-    edittitle.style.display="block";  
+    edittitle.style.display="flex";  
     editlink.animate([
         { top: "0"},
         { top: "78%"},
         ], {
         duration: 1500,
         });
-    editlink.style.display="block";  
+    editlink.style.display="flex";  
     done.animate([
         { opacity: "0"},
         { opacity: "0"},

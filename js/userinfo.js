@@ -376,6 +376,7 @@ $(document).ready(function(){
             $(".link-option").slideUp(); 
         }
     });
+
 });
 
 function guides(){
@@ -394,9 +395,7 @@ function guides(){
     else skip();
 }
 
-
 setTimeout(guides,1);
-
 
 function skip(){
     let body = document.getElementById("body");
@@ -417,8 +416,8 @@ function skip(){
       });
     limiter.style.margin="auto";
 }
+
 function guidesgo(){
-    let guides = document.getElementById("guides");
     let welcome = document.getElementById("welcome");
     let body = document.getElementById("body");
     let uploadavatar = document.getElementById("uploadavatar");
@@ -438,7 +437,7 @@ function guidesgo(){
         duration: 500,
       });
     body.style.opacity="1";
-    // guides.style.opacity="0.9";
+ 
     uploadavatar.animate([
         { top: "0"},
         { top: "50%"},
@@ -462,6 +461,7 @@ function guidesgo(){
     changename.style.display="flex";  
     nexttoaddlink.style.display="block";  
 }
+
 function nextoaddlink(){
     let uploadavatar = document.getElementById("uploadavatar");
     let changename = document.getElementById("changename");
@@ -488,6 +488,7 @@ function nextoaddlink(){
     nexttolinkcontainer.style.display="block";
     $(".link-option").slideDown();
 }
+
 function nexttolinkcontainer(){
     let linkoption = document.getElementsByClassName("link-option");
     addlinkfunction(linkoption[0].children[0]); 
@@ -521,11 +522,13 @@ function nexttolinkcontainer(){
         }); 
     done.style.display="block";
 }
+
 function done(){
     skip();
     let yes = document.getElementById("yes");
     removelink(yes);
 }
+
 function submit_form(event,form){
     event.preventDefault();
 }

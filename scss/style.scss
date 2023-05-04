@@ -580,20 +580,26 @@ nav{
     }
   }
   #uploadavatar{
-    top: 40%;
-    left: 62%;
+    // top: 42%;
+    // left: 62%;
+    left: calc(50% + 250px);
+    top: 420px;
     border-radius: 20px;
   }
   #changename{
-    top: 54%;
-    left: 72%;
+    // top: 54%;
+    // left: 72%;
+    left: calc(50% + 420px);
+    top: 540px;
     border-radius: 20px;
   }
   #nexttoaddlink,#nexttolinkcontainer,#done{
     @include welcome;
     display: none;
-    left: 80%;
-    top: 42%;
+    // left: 80%;
+    // top: 42%;
+    left: calc(50% + 550px);
+    top: 420px;
     width: 150px;
     height: 60px;
     padding: 15px 0;
@@ -606,30 +612,48 @@ nav{
     }
   }
   #addlink{
-    top: 60%;
-    left: 74%;
+    // top: 60%;
+    // left: 74%;
+    left: calc(50% + 460px);
+    top: 600px;
     width: 400px;
   }
   #nexttolinkcontainer{
-    top: 60%;
-    left: 90%;
+    // top: 60%;
+    // left: 90%;
+    left: calc(50% + 760px);
+    top: 600px;
   }
   #edittitle{
-    top: 68%;
-    left: 77%;
+    // top: 68%;
+    // left: 77%;
+    left: calc(50% + 440px);
+    top: 675px;
   }
   #editlink{
-    top: 74%;
-    left: 77%;
+    // top: 74%;
+    // left: 77%;
+    left: calc(50% + 440px);
+    top: 730px;
   }
   #done{
-    top: 71%;
-    left: 92%;
+    // top: 71%;
+    // left: 92%;
+    left: calc(50% + 550px);
+    top: 850px;
   }
 }
 
 
 // Responsive
+@media (max-width: 1700px) {
+  #guides{
+    #nexttolinkcontainer{
+      left: calc(50% + 590px);
+      top: 700px;
+    }
+  }
+} 
 @media (max-width: 1500px) {
   .content{
     .show{

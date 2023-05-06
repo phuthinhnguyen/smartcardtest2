@@ -421,7 +421,9 @@ function guidesgo(){
     let welcome = document.getElementById("welcome");
     let body = document.getElementById("body");
     let uploadavatar = document.getElementById("uploadavatar");
+    let uploadavatarresponsive = document.getElementById("uploadavatar-responsive");
     let changename = document.getElementById("changename");
+    let changenameresponsive = document.getElementById("changename-responsive");
     let nexttoaddlink = document.getElementById("nexttoaddlink");
     welcome.style.display="none";
     welcome.animate([
@@ -438,18 +440,40 @@ function guidesgo(){
       });
     body.style.opacity="1";
  
-    uploadavatar.animate([
-        { top: "0"},
-        { top: "50%"},
-        ], {
-        duration: 500,
-        });
-    changename.animate([
-        { top: "0"},
-        { top: "60%"},
-        ], {
-        duration: 1000,
-        });
+   
+    if (window.innerWidth>1300){
+        uploadavatar.animate([
+            { top: "0"},
+            { top: "50%"},
+            ], {
+            duration: 500,
+            });
+        uploadavatar.style.display="flex";  
+        changename.animate([
+            { top: "0"},
+            { top: "60%"},
+            ], {
+            duration: 1000,
+            });
+        changename.style.display="flex"; 
+    }
+    else{
+        uploadavatarresponsive.animate([
+            { top: "0"},
+            { top: "50%"},
+            ], {
+            duration: 500,
+            });
+        uploadavatarresponsive.style.display="flex";  
+        changenameresponsive.animate([
+            { top: "0"},
+            { top: "60%"},
+            ], {
+            duration: 1000,
+            });
+        changenameresponsive.style.display="flex"; 
+    }
+    
     nexttoaddlink.animate([
         { opacity: "0"},
         { opacity: "0"},
@@ -457,27 +481,42 @@ function guidesgo(){
         ], {
         duration: 1500,
         });
-    uploadavatar.style.display="flex";  
-    changename.style.display="flex";  
+ 
     nexttoaddlink.style.display="block";  
 }
 
 function nextoaddlink(){
     let uploadavatar = document.getElementById("uploadavatar");
+    let uploadavatarresponsive = document.getElementById("uploadavatar-responsive");
     let changename = document.getElementById("changename");
+    let changenameresponsive = document.getElementById("changename-responsive");
     let nexttoaddlink = document.getElementById("nexttoaddlink");
     let addlink = document.getElementById("addlink");
+    let addlinkresponsive = document.getElementById("addlink-responsive");
     let nexttolinkcontainer = document.getElementById("nexttolinkcontainer");
     uploadavatar.style.display="none";
+    uploadavatarresponsive.style.display="none";
     changename.style.display="none";
+    changenameresponsive.style.display="none";
     nexttoaddlink.style.display="none";
-    addlink.animate([
-        { top: "0"},
-        { top: "60%"},
-        ], {
-        duration: 1000,
-        });
-    addlink.style.display="flex";  
+    if (window.innerWidth>1400){
+        addlink.animate([
+            { top: "0"},
+            { top: "60%"},
+            ], {
+            duration: 1000,
+            });
+        addlink.style.display="flex";
+    }
+    else{
+        addlinkresponsive.animate([
+            { top: "0"},
+            { top: "60%"},
+            ], {
+            duration: 1000,
+            });
+        addlinkresponsive.style.display="block";
+    }
     nexttolinkcontainer.animate([
         { opacity: "0"},
         { opacity: "0"},
@@ -493,26 +532,69 @@ function nexttolinkcontainer(){
     let linkoption = document.getElementsByClassName("link-option");
     addlinkfunction(linkoption[0].children[0]); 
     let addlink = document.getElementById("addlink");
+    let addlinkresponsive = document.getElementById("addlink-responsive");
     let nexttolinkcontainer = document.getElementById("nexttolinkcontainer");
     let edittitle = document.getElementById("edittitle");
+    let edittitleresponsive = document.getElementById("edittitle-responsive");
     let editlink = document.getElementById("editlink");
+    let editlinkresponsive = document.getElementById("editlink-responsive");
+    let preview = document.getElementById("preview");
     let done = document.getElementById("done");
     addlink.style.display="none";
+    addlinkresponsive.style.display="none";
     nexttolinkcontainer.style.display="none";
-    edittitle.animate([
+    if (window.innerWidth>1500){
+        edittitle.animate([
+            { top: "0"},
+            { top: "77%"},
+            ], {
+            duration: 1000,
+            });
+        edittitle.style.display="flex";  
+        editlink.animate([
+            { top: "0"},
+            { top: "78%"},
+            ], {
+            duration: 1500,
+            });
+        editlink.style.display="flex";
+        preview.style.left="calc(15% + 130px)";   
+    }
+    else{
+        edittitleresponsive.animate([
+            { top: "0"},
+            { top: "77%"},
+            ], {
+            duration: 1000,
+            });
+        edittitleresponsive.style.display="flex";  
+        editlinkresponsive.animate([
+            { top: "0"},
+            { top: "78%"},
+            ], {
+            duration: 1500,
+            });
+        editlinkresponsive.style.display="flex";  
+        done.style.left="calc(50% - 100px)";
+        done.style.top="700px";  
+        if (window.innerWidth>1200){
+            preview.style.left="calc(15% + 100px)"; 
+        }
+        else if (window.innerWidth<=1200 && window.innerWidth>1100){
+            preview.style.left="calc(15% + 60px)"; 
+        }
+        else if (window.innerWidth<=1100){
+            preview.style.left="calc(15% + 30px)"; 
+        }
+   
+    }
+    preview.animate([
         { top: "0"},
-        { top: "77%"},
-        ], {
-        duration: 1000,
-        });
-    edittitle.style.display="flex";  
-    editlink.animate([
-        { top: "0"},
-        { top: "78%"},
+        { top: "22%"},
         ], {
         duration: 1500,
         });
-    editlink.style.display="flex";  
+    preview.style.display="block"; 
     done.animate([
         { opacity: "0"},
         { opacity: "0"},
@@ -521,6 +603,7 @@ function nexttolinkcontainer(){
         duration: 1800,
         }); 
     done.style.display="block";
+  
 }
 
 function done(){
